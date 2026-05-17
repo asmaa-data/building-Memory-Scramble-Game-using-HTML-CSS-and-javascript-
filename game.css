@@ -1,0 +1,258 @@
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+
+ font-family: Arial, sans-serif;
+
+ /* background: linear-gradient(
+ 135deg,
+ #141e30,
+ #243b55
+ ); */
+
+background: linear-gradient(
+135deg,
+#1e3c72,
+#2a5298
+);
+ min-height: 100vh;
+
+ text-align: center;
+
+ color: white;
+
+ padding: 20px;
+}
+
+
+h1 {
+
+ margin-bottom: 20px;
+
+ font-size: 45px;
+
+ letter-spacing: 2px;
+
+ text-shadow:
+ 0 0 10px #00c6ff,
+ 0 0 20px #00c6ff;
+}
+
+
+.settings {
+
+ background: rgba(255,255,255,0.1);
+
+ padding: 20px;
+
+ width: fit-content;
+
+ margin: auto;
+
+ border-radius: 15px;
+
+ backdrop-filter: blur(10px);
+
+ box-shadow:
+ 0 0 20px rgba(0,0,0,0.4);
+
+ margin-bottom: 20px;
+}
+
+/* Inputs */
+
+.settings input {
+
+ padding: 12px;
+
+ width: 90px;
+
+ border: none;
+
+ border-radius: 10px;
+
+ margin: 5px;
+
+ font-size: 16px;
+
+ text-align: center;
+
+ outline: none;
+}
+
+/* Button */
+
+.settings button {
+
+ padding: 12px 25px;
+
+ border: none;
+
+ border-radius: 10px;
+
+ background: linear-gradient(
+ 135deg,
+ #00c6ff,
+ #0072ff
+ );
+
+ color: white;
+
+ font-size: 16px;
+
+ cursor: pointer;
+
+ transition: 0.3s;
+}
+
+.settings button:hover {
+
+ transform: scale(1.05);
+
+ opacity: 0.9;
+}
+
+
+#timer {
+
+ margin-top: 10px;
+
+ margin-bottom: 20px;
+
+ font-size: 28px;
+
+ font-weight: bold;
+
+ transition: 0.3s;
+}
+
+
+.game-board {
+
+ display: grid;
+
+ gap: 15px;
+
+ justify-content: center;
+
+ margin-top: 20px;
+}
+
+.card {
+
+ width: 100px;
+
+ height: 100px;
+
+ position: relative;
+
+ transform-style: preserve-3d;
+
+ transition: transform 0.6s;
+
+ cursor: pointer;
+}
+
+/* Flip Animation */
+
+.card.flip {
+
+ transform: rotateY(180deg);
+}
+
+
+.front,
+.back {
+
+ position: absolute;
+
+ width: 100%;
+
+ height: 100%;
+
+ border-radius: 15px;
+
+ display: flex;
+
+ justify-content: center;
+
+ align-items: center;
+
+ font-size: 45px;
+
+ backface-visibility: hidden;
+
+ box-shadow:
+ 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Back Side */
+
+.front {
+
+ background: linear-gradient(
+ 135deg,
+ #ff512f,
+ #dd2476
+ );
+
+ color: white;
+}
+
+/* Front Side */
+
+.back {
+
+ background: white;
+
+ transform: rotateY(180deg);
+
+ color: black;
+}
+
+
+
+.card.matched {
+
+ box-shadow:
+ 0 0 15px lightgreen,
+ 0 0 30px lightgreen;
+}
+
+
+.win-message {
+
+ margin-top: 20px;
+
+ font-size: 35px;
+
+ color: #00ff95;
+
+ font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+
+ .card {
+
+ width: 80px;
+
+ height: 80px;
+ }
+
+ .front,
+ .back {
+
+ font-size: 35px;
+ }
+
+ h1 {
+
+ font-size: 35px;
+ }
+}
